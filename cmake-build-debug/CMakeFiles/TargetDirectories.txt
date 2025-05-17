@@ -1,0 +1,3 @@
+C:/Users/Reda/CLionProjects/Projektas Dbesijos paslaugos/cmake-build-debug/CMakeFiles/Projektas_Dbesijos_paslaugos.dir
+C:/Users/Reda/CLionProjects/Projektas Dbesijos paslaugos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Reda/CLionProjects/Projektas Dbesijos paslaugos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
