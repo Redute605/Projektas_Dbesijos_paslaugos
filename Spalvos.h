@@ -1,15 +1,17 @@
 //
-// Created by Reda on 2025-05-17.
+// Created by Reda on 2025-05-18.
 //
 
 #ifndef SPALVOS_H
 #define SPALVOS_H
 #include <windows.h>
-#include "Spalvos.h"
 
 
-void Pakeisti_Konsoles_Teksto_Spalva;
+class Spalvos {
+public:
+    static void Pakeisti_Konsolės_Teksto_Spalva(int Spalva);
 
+};
 
 
 

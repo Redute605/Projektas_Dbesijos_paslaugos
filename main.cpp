@@ -1,11 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
+#include "Spalvos.h"
+
+
+
 using namespace std;
 
 // Kuriame Debesijos serviso paslaugos
 // Nuomojam HDD, RAM
-
+1.32 val.
 
 class Componentai {
     public:
@@ -38,6 +42,7 @@ public:
     }
 
     void get_Informaciją() override {
+
         cout << "-----------------------------" << name << "--------------------------" << endl;
         for (auto componentai : components) {
             componentai->get_Informaciją();
@@ -50,7 +55,7 @@ public:
     }
 };
 
-class Leaf : public Composite {
+class Leaf : public Componentai {
 private:
     string Pavadinimas;
     double Kaina;
@@ -120,18 +125,21 @@ int main() {
     root.add(&database);
 /*
  // Žemiaus pasirenkame kokią informaciją norime pateikti!!!!
- // datebase.. root...
+ // database.. root...
    root.get_Informaciją();
     cout << "Paskaičiuoti kainą duomenų bazės: "<< root.get_Kainą() << endl;
 */
 
 int input = 1 ;
     while (input != 0) {
-
-        cout << "0 Norint išeiti iš programos. " << endl;
-        cout << "1 Pasirinkti ..... " << endl;
-        cout << "2 sukurti naują kategoriją " << endl;
-
+     //   Spalvos::Pakeisti_Konsolės_Teksto_Spalva(10);
+        cout <<"--------------------------------" << endl;
+        cout <<"            MENIU              " << endl;
+        cout << "0. Norint išeiti iš programos. " << endl;
+        cout << "1. Pasirinkti ..... " << endl;
+        cout << "2. Sukurti naują kategoriją " << endl;
+        cout << "-------------------------------" << endl;
+    //    Spalvos::Pakeisti_Konsolės_Teksto_Spalva(5);
         cin >> input;
 
         if (input == 1) {
@@ -142,18 +150,22 @@ int input = 1 ;
             string Pavadinimas_Kategorijos;
             cin >> Pavadinimas_Kategorijos;
 
-            cout <<  "Įvesti kainą ir sumą: "<< endl;
+            auto *Kategorija = new Composite(Pavadinimas_Kategorijos);
+                root.add(Kategorija);
+
+            cout <<  "Įvesti pavadinimą,kainą ir sumą: "<< endl;
             string Pavadinimas;
             double Kaina;
             int Suma;
             cin >> Pavadinimas >> Kaina >> Suma;
 
-            root.add(new Leaf(Pavadinimas, Kaina, Suma));
+           auto *Paslauga = new Leaf(Pavadinimas, Kaina, Suma);
+           Kategorija->add(Paslauga);
 
         }
     }
-1.24 minutes
 
+//           cout <<" Iš viso už duomenų bazę: " << root.get_Kainą()<< endl;
 
 
 
