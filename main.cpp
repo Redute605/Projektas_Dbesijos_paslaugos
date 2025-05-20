@@ -2,14 +2,11 @@
 #include <vector>
 #include <windows.h>
 #include "Spalvos.h"
-
+#include "Componentai.h"
+#include "Composite.h"
 
 
 using namespace std;
-
-// Kuriame Debesijos serviso paslaugos
-// Nuomojam HDD, RAM
-1.32 val.
 
 class Componentai {
     public:
@@ -115,9 +112,6 @@ int main() {
     database.add(new Leaf ("PostgreSQL", 1200));
     database.add(new Leaf ("MongoDB", 1300));
 
-
-
-
     root.add(&storage);
     root.add(&network);
     root.add(&security);
@@ -130,22 +124,22 @@ int main() {
     cout << "Paskaičiuoti kainą duomenų bazės: "<< root.get_Kainą() << endl;
 */
 
-int input = 1 ;
-    while (input != 0) {
-     //   Spalvos::Pakeisti_Konsolės_Teksto_Spalva(10);
+int punktas = 1 ;
+    while (punktas != 0) {
+//        Spalvos::Pakeisti_Konsolės_Teksto_Spalva(10);
         cout <<"--------------------------------" << endl;
-        cout <<"            MENIU              " << endl;
+        cout <<"             MENIU              " << endl;
+        cout << "1. Pasirinkti ................ " << endl;
+        cout << "2. Sukurti naują kategoriją.   " << endl;
         cout << "0. Norint išeiti iš programos. " << endl;
-        cout << "1. Pasirinkti ..... " << endl;
-        cout << "2. Sukurti naują kategoriją " << endl;
         cout << "-------------------------------" << endl;
-    //    Spalvos::Pakeisti_Konsolės_Teksto_Spalva(5);
-        cin >> input;
+//        Spalvos::Pakeisti_Konsolės_Teksto_Spalva(5);
+        cin >> punktas;
 
-        if (input == 1) {
+        if (punktas == 1) {
             root.get_Informaciją();
         }
-        else if (input ==2) {
+        else if (punktas ==2) {
             cout << "Įvesti pavadinimo kategoriją: " << endl;
             string Pavadinimas_Kategorijos;
             cin >> Pavadinimas_Kategorijos;
@@ -161,6 +155,8 @@ int input = 1 ;
 
            auto *Paslauga = new Leaf(Pavadinimas, Kaina, Suma);
            Kategorija->add(Paslauga);
+        }
+        else if (punktas == 3) {
 
         }
     }
